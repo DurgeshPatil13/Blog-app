@@ -1,4 +1,4 @@
-const {user}=require("../models/user")
+const {user,posts}=require("../models/user")
 const bcrypt=require("bcrypt");
 
   const jwt=require("jsonwebtoken")
@@ -53,9 +53,20 @@ async function profileinfo(req,res) {
   })
 }
 
+
+// posts creation
+async function postscreation(req,res) {
+  const postcreate=await posts.create({
+title:req.body.title,
+content:req.body.content,
+author:req.userId
+  })
+  return res.json(postcreate)
+}
 // exports
 module.exports={
     createuser,
     loginreq,
-    profileinfo
+    profileinfo,
+     postscreation
 };
