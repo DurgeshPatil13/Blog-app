@@ -63,10 +63,52 @@ author:req.userId
   })
   return res.json(postcreate)
 }
+// posts display
+async function displayposts(req,res) 
+{
+const allposts=await posts.find()
+res.send(allposts)  
+}
+
+// display one post
+async function displayonepost(req,res) {
+  const postfind=await posts.findOne({
+   _id:req.params.id
+  })
+  console.log(req.params.id)
+  if(!postfind){
+    return res.send("not found")
+  }
+  res.json(postfind)
+}
+// update post 
+async function updatepost(req,res) {
+  const update=await posts.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+{ returnDocument: "after" }
+
+  )
+  res.json(update)
+}
+
+
+// delete the post
+async function deletepost(req,res) {
+await posts.findByIdAndDelete(
+  req.params.id
+)  
+res.json("user deleted")
+}
+
 // exports
 module.exports={
     createuser,
     loginreq,
     profileinfo,
-     postscreation
+     postscreation,
+     displayposts,
+     displayonepost,
+     updatepost,
+     deletepost
 };
