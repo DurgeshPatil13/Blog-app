@@ -17,7 +17,7 @@ async function validateprofile(req,res,next) {
    req.userId=pass.userid;
 
     next();
-}
+};
 
 
 module.exports={

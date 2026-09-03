@@ -10,7 +10,7 @@ async function createuser(req,res) {
    try{ const User=await user.create({
         name:req.body.name,
         email:req.body.email,
-        password:hashpass
+        password:hashpass,
     })
     return res.json(User)
 }
@@ -90,7 +90,7 @@ async function updatepost(req,res) {
 
   )
   res.json(update)
-}
+};
 
 
 // delete the post
