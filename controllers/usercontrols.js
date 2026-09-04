@@ -1,7 +1,7 @@
 const {user,posts}=require("../models/user")
 const bcrypt=require("bcrypt");
 
-  const jwt=require("jsonwebtoken")
+  const jwt=require("jsonwebtoken");
 require("dotenv").config()
 
 // user creation
