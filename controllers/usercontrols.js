@@ -12,8 +12,8 @@ async function createuser(req,res) {
         email:req.body.email,
         password:hashpass,
     })
-    return res.json(User)
-}
+    return res.json(User);
+};
     catch(err){
 res.status(404).send("error creating user")
     }
