@@ -16,9 +16,9 @@ async function createuser(req,res) {
 };
     catch(err){
 res.status(404).send("error creating user")
-    }
+    };
 
-}
+};
 
 // login request
 async function loginreq(req,res) {

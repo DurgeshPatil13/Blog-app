@@ -22,4 +22,4 @@ async function validateprofile(req,res,next) {
 
 module.exports={
     validateprofile
-}
+};

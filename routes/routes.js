@@ -12,4 +12,4 @@ Router.patch("/posts/:id",validateprofile,updatepost)
 Router.delete("/posts/:id",validateprofile,deletepost)
 module.exports={
     Router
-}
+};
